@@ -75,6 +75,7 @@
                 if (selVal > 0) {
                     for (var i = 1; i <= selVal; i++) {
                         $("#textboxDiv").append('<input class="input-field" type="text" name="textVal[]" value="" />');
+                        //$("#textboxDiv").append('<input class="input-field" type="text" name="textVal' + i + '" value="" />');
                     }
                 }
             });
