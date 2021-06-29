@@ -36,7 +36,7 @@
     <tr>
         <td width="20%">
             <h6 style="text-align:left;"> View Ticket </h6> <br />
-<textarea id="TextArea1" cols="20" rows="17" style="text-align:left;"> ticket here</textarea>
+<textarea id="TextTKT" name="TextTKT" cols="20" rows="17" style="text-align:left;"> ticket here</textarea>
 
 
         </td>
@@ -56,7 +56,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="Text1" placeholder="(optional)" type="text" />
+            <input class="input-field" id="OriginalTKT" name="OriginalTKT" placeholder="(optional)" type="text" />
         </td>
     </tr>
 
@@ -66,7 +66,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="Text2" placeholder="(optional)" type="text" />
+            <input class="input-field" id="TaxK7" name="TaxK7" placeholder="(optional)" type="text" />
         </td>
     </tr>
 
@@ -76,7 +76,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="Text3" placeholder="(optional)" type="text" />
+            <input class="input-field" id="SDCharges" name="SDCharges" placeholder="(optional)" type="text" />
         </td>
     </tr>
 
@@ -86,7 +86,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="Text4" placeholder="(optional)" type="text" />
+            <input class="input-field" id="TKTAmount" name="TKTAmount" placeholder="(optional)" type="text" />
         </td>
     </tr>
 
