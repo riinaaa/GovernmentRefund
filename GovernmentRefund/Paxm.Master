@@ -66,6 +66,19 @@
                 <p>&copy; <%: DateTime.Now.Year %> - Government Refund System</p>
             </footer>
         </div>
+          <script type="text/javascript">
+        $(document).ready(function () {
+            $("#dropdown").change(function () {
+                var selVal = $(this).val();
+                $("#textboxDiv").html('');
+                if (selVal > 0) {
+                    for (var i = 1; i <= selVal; i++) {
+                        $("#textboxDiv").append('<input class="input-field" type="text" name="textVal[]" value="" />');
+                    }
+                }
+            });
+        });
+          </script>
 
     </form>
 </body>

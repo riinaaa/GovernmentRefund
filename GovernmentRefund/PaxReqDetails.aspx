@@ -119,7 +119,7 @@
     <tr>
         <td>
 <textarea id="TextArea1" cols="20" rows="17"> Ticket Here </textarea>
-        </td>
+        </td> &nbsp; &nbsp;
         <td>
           <a href="PaxTKT.aspx" class="btn btn-primary btn-lg active" role="button">Edit</a>
         </td>

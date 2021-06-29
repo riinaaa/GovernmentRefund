@@ -17,14 +17,14 @@
         </table>
 
             <label for="FromDate">From:</label>
-            <input type="date" id="FromDate" name="FromDate">
+            <input style="color:black" type="date" id="FromDate" name="FromDate">
             <label for="ToDate">To:</label>
-            <input type="date" id="ToDate" name="ToDate">
+            <input style="color:black" type="date" id="ToDate" name="ToDate">
         <a href="PaxReport.aspx" class="btn btn-primary btn-lg active" role="button">Search</a>
 
         <br />
 
-        <select name="ReqStatus" id="dropdown" required>
+        <select style="color:black" name="ReqStatus" id="dropdown" required>
             <option value="All">All</option>
             <option value="Approved">Approved</option>
             <option value="Rejected">Rejected</option>
