@@ -34,7 +34,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="Text3" placeholder="IBAN" type="text" />
+            <input class="input-field" id="AccountNumber" name="AccountNumber" placeholder="IBAN" type="text" />
         </td>
     </tr>
 
@@ -44,7 +44,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="Text2" placeholder="Reference #" type="text" />
+            <input class="input-field" id="ReferenceNumber" name="ReferenceNumber" placeholder="Reference #" type="text" />
         </td>
     </tr>
 
@@ -55,7 +55,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="Text4" placeholder="Total Fare for all tickets.." type="text" />
+            <input class="input-field" id="TotalFare" name="TotalFare" placeholder="Total Fare for all tickets.." type="text" />
         </td>
     </tr>
 
@@ -117,7 +117,7 @@
 
     <tr>
         <td>
-<textarea id="TextArea1" cols="20" rows="17"> Ticket Here </textarea>
+<textarea id="TextTKT" name="TextTKT" cols="20" rows="17"> Ticket Here </textarea>
         </td>
         <td>
           <a href="AdminTKT.aspx" class="btn btn-primary btn-lg active" role="button">Edit</a>

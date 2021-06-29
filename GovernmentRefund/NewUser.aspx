@@ -11,19 +11,19 @@
     <table align="center">
         <tr>
             <td>
-    <input class="input-fieldd" id="Text1" placeholder=" Enter user Name" type="text" />
+    <input class="input-fieldd" id="UserName" name="UserName" placeholder=" Enter user Name" type="text" />
             </td>
         </tr>
 
                 <tr>
             <td>
-    <input class="input-fieldd" id="Text2" placeholder=" Enter user ID" type="text" />
+    <input class="input-fieldd" id="ID" name="ID" placeholder=" Enter user ID" type="text" />
             </td>
         </tr>
 
                 <tr>
             <td>
-    <input class="input-fieldd" id="Password1" placeholder=" Enter User password " type="password" />
+    <input class="input-fieldd" id="Password" name="Password" placeholder=" Enter User password " type="password" />
             </td>
         </tr>
     </table>

@@ -11,12 +11,12 @@
         <table align="center">
             <tr>
                 <td>
-    <input class="input-field" id="Text1" placeholder=" Enter your ID" type="text" />
+    <input class="input-field" id="ID" name="ID" placeholder=" Enter your ID" type="text" />
                     </td>
             </tr>
             <tr>
                 <td>
-    <input class="input-field" id="Password1" placeholder=" Enter your password " type="password" />
+    <input class="input-field" id="Password" name="Password" placeholder=" Enter your password " type="password" />
                 </td>
             </tr>
 
