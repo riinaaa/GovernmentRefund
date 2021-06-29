@@ -45,13 +45,13 @@
         <td>
             <h6 style="text-align:left;"> Enter Tickets: </h6>
         </td>
-        <td id="textboxDiv"></td>
+        <td id="textboxDiv">&nbsp;</td>
     </tr>
 
     <tr>
         <td></td>
         <td width="20%">
-        </td>
+            &nbsp;</td>
     </tr>
 </table>
 
