@@ -8,14 +8,14 @@
                 <table style="width: 53%; height: 255px;">
                     <tr>
                         <td width="20%">            
-                            <h6 style="text-align:left;"> Upload Letter: </h6> &nbsp;</td>
+                            <h4 style="text-align:left;"> Upload Letter: </h4> &nbsp;</td>
                         <td width="20%">
                             <asp:FileUpload ID="FileUpload1" runat="server" />
                         </td>
                     </tr>
                     <tr>
                         <td width="20%">
-                           <h6 style="text-align:left;"> Number Of Tickets: </h6>  &nbsp;</td>
+                           <h4 style="text-align:left;"> Number Of Tickets: </h4>  &nbsp;</td>
                         <td width="20%">
                <asp:DropDownList id="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                <asp:ListItem Value="" Text="Please Select" /> 
@@ -32,28 +32,34 @@
                            
                             &nbsp;</td>
                     </tr>
+
                     <tr>
                         <td>
-                            <h6 style="text-align:left;"> Enter Tickets: </h6>&nbsp;</td>
+                            <h4 style="text-align:left;"> Enter Tickets: </h4>&nbsp;</td>
+
+                    </tr>
+
+                    <tr>
                         <td>
+                        <td width="40%">
                              <br /> <br />
-                            <asp:TextBox ID="TextBox1" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox1" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number"></asp:TextBox>
                             <br />  <br /> 
-                            <asp:TextBox ID="TextBox2" runat="server" Visible="false"  CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox2" runat="server" Visible="false"  CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number"></asp:TextBox>
                             <br /> <br /> 
-                            <asp:TextBox ID="TextBox3" runat="server" Visible="false"  CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox3" runat="server" Visible="false"  CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number"></asp:TextBox>
                             <br /> <br /> 
-                            <asp:TextBox ID="TextBox4" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox4" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number"></asp:TextBox>
                             <br />  <br /> 
-                            <asp:TextBox ID="TextBox5" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox5" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number"></asp:TextBox>
                             <br />  <br /> 
-                            <asp:TextBox ID="TextBox6" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox6" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number"></asp:TextBox>
                             <br />  <br /> 
-                            <asp:TextBox ID="TextBox7" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox7" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number"></asp:TextBox>
                             <br /> <br /> 
-                            <asp:TextBox ID="TextBox8" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox8" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number"></asp:TextBox>
                             <br /> <br /> 
-                            <asp:TextBox ID="TextBox9" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <asp:TextBox class="input-fieldd" ID="TextBox9" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket number"></asp:TextBox>
                             <br /> <br /> 
 
                              <asp:Button ID="Button1" runat="server" Height="47px" Text="Add Request" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
