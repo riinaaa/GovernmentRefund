@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Web;
 
 namespace GovernmentRefund
 {
@@ -128,5 +128,5 @@ namespace GovernmentRefund
 
             return "ERROR: COUPON INVALID";
         }
-
     }
+}
