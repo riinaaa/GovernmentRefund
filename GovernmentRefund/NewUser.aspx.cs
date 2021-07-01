@@ -25,10 +25,11 @@ namespace GovernmentRefund
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            //idk whats the problem here pls help :)
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-
-            cmd.CommandText = "insert into Users values('"+ UserID.Text + "','"+ UserID.Text+"','"+ Password.Text+"','"+ RoleID.SelectedItem + "')";
+            int role = Int32.Parse(RoleID.SelectedItem);
+            cmd.CommandText = "insert into Users values('"+ UserID.Text + "','"+ UserID.Text+"','"+ Password.Text+"','"+ role + "')";
             cmd.ExecuteNonQuery();
         }
     }

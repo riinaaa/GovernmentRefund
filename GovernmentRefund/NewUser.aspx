@@ -28,7 +28,7 @@
 <%--    <input class="input-fieldd" id="Password" name="Password" placeholder=" Enter User password " type="password" />--%>
 
          <asp:TextBox class="input-fieldd" ID="Password"  placeholder=" Enter User password" type="password" runat="server"></asp:TextBox>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                
 
             </td>
         </tr>
@@ -43,7 +43,7 @@
     </select>--%>
 
     <asp:DropDownList ID="RoleID" runat="server">
-            <asp:ListItem Value="">Please Select: </asp:ListItem>  
+            <asp:ListItem>Please Select: </asp:ListItem>  
             <asp:ListItem value="101">Admin </asp:ListItem>  
             <asp:ListItem value="102">Sales </asp:ListItem>  
             <asp:ListItem value="103">Pax </asp:ListItem>  
