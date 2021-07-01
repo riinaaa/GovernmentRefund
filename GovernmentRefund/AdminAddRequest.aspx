@@ -47,6 +47,8 @@
             <h6 style="text-align:left;"> Enter Tickets: </h6>
         </td>
         <td id="textboxDiv">&nbsp;</td>
+<%--        <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="textboxDiv" ErrorMessage="Ticket is not valid"></asp:CustomValidator>--%>
+
     </tr>
 
     <tr>
