@@ -1,66 +1,67 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Adminm.Master" AutoEventWireup="true" CodeFile="AdminAddRequest.aspx.cs" Inherits="GovernmentRefund.AdminAddRequest" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Adminm.Master" AutoEventWireup="true" CodeBehind="AdminAddRequest.aspx.cs" Inherits="GovernmentRefund.AdminAddRequest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <div class="text-center">
+            <div class="text-center">
     <h1 class="display-4">New Request</h1>
+                <br /> <br />
+                <h3 style="text-align: left; color:#18216d; text-decoration: underline;"> Request Info: </h3>
+                <br />
+                <table style="width: 53%; height: 255px;">
+                    <tr>
+                        <td width="20%">            
+                            <h6 style="text-align:left;"> Upload Letter: </h6> &nbsp;</td>
+                        <td width="20%">
+                            <asp:FileUpload ID="FileUpload1" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="20%">
+                           <h6 style="text-align:left;"> Number Of Tickets: </h6>  &nbsp;</td>
+                        <td width="20%">
+               <asp:DropDownList id="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+               <asp:ListItem Value="" Text="Please Select" /> 
+               <asp:ListItem Value="1" Text="1" />
+               <asp:ListItem Value="2" Text="2" />
+               <asp:ListItem Value="3" Text="3" />
+               <asp:ListItem Value="4" Text="4" />
+               <asp:ListItem Value="5" Text="5" />
+               <asp:ListItem Value="6" Text="6" />
+               <asp:ListItem Value="7" Text="7" />
+               <asp:ListItem Value="8" Text="8" />
+               <asp:ListItem Value="9" Text="9" />
+                </asp:DropDownList>
+                           
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h6 style="text-align:left;"> Enter Tickets: </h6>&nbsp;</td>
+                        <td>
+                             <br /> <br />
+                            <asp:TextBox ID="TextBox1" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br />  <br /> 
+                            <asp:TextBox ID="TextBox2" runat="server" Visible="false"  CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br /> <br /> 
+                            <asp:TextBox ID="TextBox3" runat="server" Visible="false"  CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br /> <br /> 
+                            <asp:TextBox ID="TextBox4" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br />  <br /> 
+                            <asp:TextBox ID="TextBox5" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br />  <br /> 
+                            <asp:TextBox ID="TextBox6" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br />  <br /> 
+                            <asp:TextBox ID="TextBox7" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br /> <br /> 
+                            <asp:TextBox ID="TextBox8" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br /> <br /> 
+                            <asp:TextBox ID="TextBox9" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px"></asp:TextBox>
+                            <br /> <br /> 
 
-<table style="width: 60%; height: 100px;">
-    <tr>
-        <td width="20%">
-            <h3 style="text-align: left; color:#18216d; text-decoration: underline;"> Request Info </h3>
-        </td>
-    </tr>
+                             <asp:Button ID="Button1" runat="server" Height="47px" Text="Add Request" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
 
-    <tr>
-        <td width="20%">
-            <h6 style="text-align:left;"> Upload Letter: </h6>
-        </td>
+                            &nbsp;</td>
+                        
+                    </tr>
+                </table>
 
-        <td width="20%">
-            <input type="file" id="myFile" name="filename">
-        </td>
-    </tr>
-
-    <tr>
-        <td width="20%">
-            <h6 style="text-align:left;"> Number Of Tickets: </h6>
-        </td>
-
-        <td width="20%">
-            <select name="numDep" id="dropdown">
-                <option value="">Please Select</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <h6 style="text-align:left;"> Enter Tickets: </h6>
-        </td>
-        <td id="textboxDiv">&nbsp;</td>
-<%--        <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="textboxDiv" ErrorMessage="Ticket is not valid"></asp:CustomValidator>--%>
-
-    </tr>
-
-    <tr>
-        <td></td>
-        <td width="20%">
-            &nbsp;</td>
-    </tr>
-</table>
-
-        <a href="AdminDashboard.aspx" class="btn btn-primary btn-lg active" role="button">Add Request</a>
-
-
-</div>
-    
+                </div>
 </asp:Content>
