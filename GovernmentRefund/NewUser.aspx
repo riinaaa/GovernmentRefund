@@ -12,16 +12,16 @@
         <br>
         <asp:TextBox class="input-fieldd" ID="UserID" runat="server" placeholder="Enter User ID"></asp:TextBox>
                 <br>
-        <asp:TextBox class="input-fieldd" ID="Password" runat="server" placeholder="Enter Password"></asp:TextBox>
+        <asp:TextBox class="input-fieldd" ID="Password" runat="server" placeholder="Enter Password" TextMode="Password"></asp:TextBox>
             <h6 style="text-align:center; color: white; font-size:large ;font-family:'Times New Roman', Times, serif"> Role: </h6>
         <asp:DropDownList ID="Role" runat="server">
                         <asp:ListItem>pls select</asp:ListItem>
-                        <asp:ListItem Value="101">Amin</asp:ListItem>
+                        <asp:ListItem Value="101">Admin</asp:ListItem>
                         <asp:ListItem Value="102">Sales</asp:ListItem>
                         <asp:ListItem Value="103">Pax</asp:ListItem>
                         <asp:ListItem Value="104">Collection</asp:ListItem>
         </asp:DropDownList>
-        <br />
+        <br /> <br />
                 <asp:Button class="my-button" ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
 
 
