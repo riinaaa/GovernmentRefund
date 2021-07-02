@@ -45,19 +45,15 @@
                 </td>
                 <td width="40%">
 
-                    <%--generated tickets here--%>
+                   %--generated tickets here--%>
+                           <asp:Panel ID="pnlTextBoxes" runat="server">
 
-                    <asp:Panel ID="pnlTextBoxes" runat="server">
-<%--                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorTicket" runat="server" ErrorMessage="Ticket Number Is Required!">--%>
-
-<%--                        </asp:RequiredFieldValidator>--%>
-                    </asp:Panel>
-                    &nbsp;
+                            </asp:Panel>
+                            &nbsp;
 
 
                 </td>
             </tr>
-
             <tr>
                 <td></td>
                 <td>

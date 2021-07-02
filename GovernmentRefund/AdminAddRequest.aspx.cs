@@ -32,16 +32,13 @@ namespace GovernmentRefund
                 RequiredFieldValidator rfv = new RequiredFieldValidator();
                 rfv.ErrorMessage = "Ticket number is required!";
                 rfv.ControlToValidate = txtID;
-                pnlTextBoxes.Controls.Add(rfv);
-
-            }
+                pnlTextBoxes.Controls.Add(rfv); }
 
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             //database add
-
             Response.Redirect("AdminDashboard.aspx");
         }
     }
