@@ -28,13 +28,15 @@ namespace GovernmentRefund
                 txt.Attributes.Add("placeholder", "Enter Ticket: "+i);
                 pnlTextBoxes.Controls.Add(txt);
                 txt.CssClass = ("input-field");
+
             }
 
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminDashboard.aspx");
+
+                Response.Redirect("AdminDashboard.aspx");
         }
 
         //protected void TextBox1_TextChanged(object sender, EventArgs e)
