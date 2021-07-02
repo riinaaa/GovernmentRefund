@@ -45,6 +45,19 @@ textarea {
     box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.2), 0 10px 30px 0 rgba(255, 255, 255, 0.19);
 }
 
+.inputttt-tickets {
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    padding-left: 45px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    height: 18px;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.2), 0 10px 30px 0 rgba(255, 255, 255, 0.19);
+}
+
     .input-field:focus {
         outline-style: none;
         box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);

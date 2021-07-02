@@ -45,11 +45,9 @@
                 </td>
                 <td width="40%">
 
-                   %--generated tickets here--%>
-                           <asp:Panel ID="pnlTextBoxes" runat="server">
-
-                            </asp:Panel>
-                            &nbsp;
+                    <asp:Panel ID="pnlTextBoxes" runat="server">
+                    </asp:Panel>
+                    &nbsp;
 
 
                 </td>

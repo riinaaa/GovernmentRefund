@@ -128,5 +128,16 @@ namespace GovernmentRefund
 
             return "ERROR: COUPON INVALID";
         }
+
+        public Boolean isValid()
+        {
+            if (GetCoupon().Contains("ERROR:") || GetFOP().Contains("ERROR:") || GetDOI().Contains("ERROR:") || GetParsedTicket().Contains("ERROR:"))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
     }
 }
