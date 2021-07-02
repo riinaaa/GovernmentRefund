@@ -24,83 +24,22 @@ namespace GovernmentRefund
             for (int i = 1; i <= boxesNumber; i++)
             {
                 TextBox txt = new TextBox();
-                txt.ID = "ticket" + i;
+                String txtID= "ticket" + i;
+                txt.ID = txtID;
                 txt.Attributes.Add("placeholder", "Enter Ticket: "+i);
-                pnlTextBoxes.Controls.Add(txt);
                 txt.CssClass = ("input-field");
-
-            }
+                pnlTextBoxes.Controls.Add(txt);
+                RequiredFieldValidator rfv = new RequiredFieldValidator();
+                rfv.ErrorMessage = "Ticket number is required!";
+                rfv.ControlToValidate = txtID;
+                pnlTextBoxes.Controls.Add(rfv); }
 
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-                Response.Redirect("AdminDashboard.aspx");
+            //database add
+            Response.Redirect("AdminDashboard.aspx");
         }
-
-        //protected void TextBox1_TextChanged(object sender, EventArgs e)
-        //{
-        //    //tkt parsing code so far
-        //    String ticketNum = TextBox1.Text;
-        //    Ticket ticc = new Ticket(ticketNum);
-        //    String ticketFull = ticc.TktBlock();
-        //    String ticketparsed = ticc.GetParsedTicket();
-        //    String fop = ticc.GetFOP();
-        //    String DOI = ticc.GetDOI();
-        //    String couponStatus = ticc.GetCoupon();
-        //    Boolean valid = false;
-        //    if (valid==true)
-        //    {
-
-        //    }
-
-        //    else
-        //    {
-
-        //    }
-
-
-        //}
-
-        //protected void TextBox2_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void TextBox3_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void TextBox4_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void TextBox5_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void TextBox6_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void TextBox7_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void TextBox8_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void TextBox9_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }
