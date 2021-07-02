@@ -15,21 +15,45 @@
                 </td>
             </tr>
         </table>
-
-            <label for="FromDate">From:</label>
+        
+            <%--<label for="FromDate">From:</label>
             <input style="color:black" type="date" id="FromDate" name="FromDate">
             <label for="ToDate">To:</label>
-            <input style="color:black" type="date" id="ToDate" name="ToDate">
-        <a href="AdminReport.aspx" class="btn btn-primary btn-lg active" role="button">Search</a>
+            <input style="color:black" type="date" id="ToDate" name="ToDate">--%>
 
+        <asp:Label ID="Label1" runat="server" Text="From:"></asp:Label>
+         <asp:TextBox ID="TxtDob" runat="server" TextMode="Date" style="color:black"> </asp:TextBox>
+        <asp:Label ID="Label2" runat="server" Text="To:"></asp:Label>
+         <asp:TextBox ID="TxtDob2" runat="server" TextMode="Date" style="color:black"> </asp:TextBox>
+
+<%--        <asp:Label ID="Label1" runat="server" Text="From: "></asp:Label>
+        <asp:TextBox ID="txtDate" runat="server" ReadOnly = "true" Width="127px"></asp:TextBox>
+<hr />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+<script type="text/javascript">
+    $(function () {
+        $("[id*=txtDate]").datepicker({
+            showOn: 'button',
+            buttonImageOnly: true,
+            buttonImage: 'images/calendar.png'
+        });
+    });
+</script>--%>
+
+
+
+ <asp:Button ID="Button1" runat="server" Height="39px" Text="Search" Width="123px" CssClass="my-button" OnClick="Button1_Click" />
         <br />
+        
 
-        <select style="color:black" name="ReqStatus" id="dropdown" required>
-            <option value="All">All</option>
-            <option value="Approved">Approved</option>
-            <option value="Rejected">Rejected</option>
-            <option value="InProgress">In Progress</option>
-        </select>
+          <asp:DropDownList id="DropDownList1" runat="server" style="color:black" AutoPostBack="true">
+               <asp:ListItem Value="All" Text="All" /> 
+               <asp:ListItem Value="Approved" Text="Approved" />
+               <asp:ListItem Value="Rejected" Text="Rejected" />
+               <asp:ListItem Value="In Progress" Text="In Progress" />
+                </asp:DropDownList>
 
     </div>   <br />
 
@@ -58,7 +82,7 @@
         </tr>
     </table>
     <h4>Total Requests: </h4>
-    <input class="my-button" id="Button5" type="button" value="Generate Report" />
+    <asp:Button ID="Button2" runat="server" Height="47px" Text="Generate Report" Width="151px" CssClass="my-button" OnClick="Button2_Click" />
 
 
 
