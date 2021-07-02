@@ -35,37 +35,30 @@
 
                     <tr>
                         <td>
-                            <h4 style="text-align:left;"> Enter Tickets: </h4>&nbsp;</td>
+                            <h4 style="text-align:left;"> Enter Tickets: </h4>&nbsp;
 
+                        </td>
+                        <td width="40%">
+
+                                <%--generated tickets here--%>
+
+                            <asp:Panel ID="pnlTextBoxes" runat="server">
+
+                            </asp:Panel>
+                            &nbsp;
+
+
+                        </td>
                     </tr>
 
                     <tr>
                         <td>
-                        <td width="40%">
-                             <br /> <br />
-                            <asp:TextBox class="input-fieldd" ID="TextBox1" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-                            <br />  <br /> 
-                            <asp:TextBox class="input-fieldd" ID="TextBox2" runat="server" Visible="false"  CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
-                            <br /> <br /> 
-                            <asp:TextBox class="input-fieldd" ID="TextBox3" runat="server" Visible="false"  CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
-                            <br /> <br /> 
-                            <asp:TextBox class="input-fieldd" ID="TextBox4" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number" OnTextChanged="TextBox4_TextChanged"></asp:TextBox>
-                            <br />  <br /> 
-                            <asp:TextBox class="input-fieldd" ID="TextBox5" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number" OnTextChanged="TextBox5_TextChanged"></asp:TextBox>
-                            <br />  <br /> 
-                            <asp:TextBox class="input-fieldd" ID="TextBox6" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number" OnTextChanged="TextBox6_TextChanged"></asp:TextBox>
-                            <br />  <br /> 
-                            <asp:TextBox class="input-fieldd" ID="TextBox7" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number" OnTextChanged="TextBox7_TextChanged"></asp:TextBox>
-                            <br /> <br /> 
-                            <asp:TextBox class="input-fieldd" ID="TextBox8" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket Number" OnTextChanged="TextBox8_TextChanged"></asp:TextBox>
-                            <br /> <br /> 
-                            <asp:TextBox class="input-fieldd" ID="TextBox9" runat="server" Visible="false" CssClass="input-field" Height="16px" Width="181px" placeholder="Ticket number" OnTextChanged="TextBox9_TextChanged"></asp:TextBox>
-                            <br /> <br /> 
 
-                             <asp:Button ID="Button1" runat="server" Height="47px" Text="Add Request" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
+                        </td>
+                        <td>
+                                                                                     <asp:Button ID="Button1" runat="server" Height="47px" Text="Add Request" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
 
-                            &nbsp;</td>
-                        
+                        </td>
                     </tr>
                 </table>
 

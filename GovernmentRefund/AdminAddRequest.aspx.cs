@@ -18,77 +18,17 @@ namespace GovernmentRefund
         }
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (DropDownList1.SelectedValue)
+
+            int boxesNumber = Convert.ToInt32(DropDownList1.SelectedValue);
+
+            for (int i = 1; i <= boxesNumber; i++)
             {
-                case "1":
-                    TextBox1.Visible = true;
-                    break;
-                case "2":
-                    TextBox1.Visible = true;
-                    TextBox2.Visible = true;
-                    break;
-                case "3":
-                    TextBox1.Visible = true;
-                    TextBox2.Visible = true;
-                    TextBox3.Visible = true;
-                    break;
-                case "4":
-                    TextBox1.Visible = true;
-                    TextBox2.Visible = true;
-                    TextBox3.Visible = true;
-                    TextBox4.Visible = true;
-                    break;
-                case "5":
-                    TextBox1.Visible = true;
-                    TextBox2.Visible = true;
-                    TextBox3.Visible = true;
-                    TextBox4.Visible = true;
-                    TextBox5.Visible = true;
-                    break;
-                case "6":
-                    TextBox1.Visible = true;
-                    TextBox2.Visible = true;
-                    TextBox3.Visible = true;
-                    TextBox4.Visible = true;
-                    TextBox5.Visible = true;
-                    TextBox6.Visible = true;
-                    break;
-                case "7":
-                    TextBox1.Visible = true;
-                    TextBox2.Visible = true;
-                    TextBox3.Visible = true;
-                    TextBox4.Visible = true;
-                    TextBox5.Visible = true;
-                    TextBox6.Visible = true;
-                    TextBox7.Visible = true;
-                    break;
-                case "8":
-                    TextBox1.Visible = true;
-                    TextBox2.Visible = true;
-                    TextBox3.Visible = true;
-                    TextBox4.Visible = true;
-                    TextBox5.Visible = true;
-                    TextBox6.Visible = true;
-                    TextBox7.Visible = true;
-                    TextBox8.Visible = true;
-                    break;
-                case "9":
-                    TextBox1.Visible = true;
-                    TextBox2.Visible = true;
-                    TextBox3.Visible = true;
-                    TextBox4.Visible = true;
-                    TextBox5.Visible = true;
-                    TextBox6.Visible = true;
-                    TextBox7.Visible = true;
-                    TextBox8.Visible = true;
-                    TextBox9.Visible = true;
-                    break;
-
-
+                TextBox txt = new TextBox();
+                txt.ID = "ticket" + i;
+                txt.Attributes.Add("placeholder", "Enter Ticket: "+i);
+                pnlTextBoxes.Controls.Add(txt);
+                txt.CssClass = ("input-field");
             }
-
-
-
 
         }
 
@@ -97,68 +37,68 @@ namespace GovernmentRefund
             Response.Redirect("AdminDashboard.aspx");
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            //tkt parsing code so far
-            String ticketNum = TextBox1.Text;
-            Ticket ticc = new Ticket(ticketNum);
-            String ticketFull = ticc.TktBlock();
-            String ticketparsed = ticc.GetParsedTicket();
-            String fop = ticc.GetFOP();
-            String DOI = ticc.GetDOI();
-            String couponStatus = ticc.GetCoupon();
-            Boolean valid = false;
-            if (valid==true)
-            {
+        //protected void TextBox1_TextChanged(object sender, EventArgs e)
+        //{
+        //    //tkt parsing code so far
+        //    String ticketNum = TextBox1.Text;
+        //    Ticket ticc = new Ticket(ticketNum);
+        //    String ticketFull = ticc.TktBlock();
+        //    String ticketparsed = ticc.GetParsedTicket();
+        //    String fop = ticc.GetFOP();
+        //    String DOI = ticc.GetDOI();
+        //    String couponStatus = ticc.GetCoupon();
+        //    Boolean valid = false;
+        //    if (valid==true)
+        //    {
 
-            }
+        //    }
 
-            else
-            {
+        //    else
+        //    {
 
-            }
+        //    }
 
 
-        }
+        //}
 
-        protected void TextBox2_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox2_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void TextBox3_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox3_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void TextBox4_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox4_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void TextBox5_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox5_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void TextBox6_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox6_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void TextBox7_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox7_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void TextBox8_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox8_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void TextBox9_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox9_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
     }
 }

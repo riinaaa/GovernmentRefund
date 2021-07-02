@@ -49,6 +49,7 @@ namespace GovernmentRefund
                 {
                     fillename = filename;
                 }
+
             }
             string text = System.IO.File.ReadAllText(@"" + fillename);
             // to divide tickets
@@ -65,7 +66,6 @@ namespace GovernmentRefund
             }
             return ticketFull;
         }
-
 
         public string GetParsedTicket()
         {
