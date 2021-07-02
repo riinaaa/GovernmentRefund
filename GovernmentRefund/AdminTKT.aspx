@@ -54,9 +54,8 @@
         <td width="20%">
             <h6 style="text-align:left;"> Original TKT: </h6>
         </td>
-
         <td width="20%">
-            <input class="input-field" id="OriginalTKT" name="OriginalTKT" placeholder="(optional)" type="text" />
+        <asp:TextBox ID="OriginalTKT" class="input-field" runat="server"  placeholder="(optional)"></asp:TextBox>
         </td>
     </tr>
 
@@ -66,7 +65,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="TaxK7" name="TaxK7" placeholder="(optional)" type="text" />
+                    <asp:TextBox ID="TaxK7" class="input-field" runat="server"  placeholder="(optional)"></asp:TextBox>
         </td>
     </tr>
 
@@ -76,7 +75,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="SDCharges" name="SDCharges" placeholder="(optional)" type="text" />
+            <asp:TextBox ID="SDCharges" class="input-field" runat="server"  placeholder="(optional)"></asp:TextBox>
         </td>
     </tr>
 
@@ -86,7 +85,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="TKTAmount" name="TKTAmount" placeholder="(optional)" type="text" />
+                        <asp:TextBox ID="TKTAmount" class="input-field" runat="server"  placeholder="(optional)"></asp:TextBox>
         </td>
     </tr>
 
@@ -95,7 +94,7 @@
        <tr>
         <td></td>
         <td width="20%">
-        <a href="AdminReqDetails.aspx" class="btn btn-primary btn-lg active" role="button">Complete</a>
+             <asp:Button ID="Button1" runat="server" Height="39px" Text="Complete" Width="123px" CssClass="my-button" OnClick="Button1_Click" />
         </td>
     </tr>
 
