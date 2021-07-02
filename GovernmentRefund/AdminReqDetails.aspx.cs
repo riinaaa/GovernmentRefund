@@ -13,5 +13,16 @@ namespace GovernmentRefund
         {
 
         }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminReqDetails.aspx");
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminTKT.aspx");
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
