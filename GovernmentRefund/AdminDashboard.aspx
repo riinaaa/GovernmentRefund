@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Adminm.Master" AutoEventWireup="true" CodeFile="AdminDashboard.aspx.cs" Inherits="GovernmentRefund.AdminDashboard" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Adminm.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="GovernmentRefund.AdminDashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
 <div class="text-center">
@@ -18,7 +18,7 @@
 
         </div>
 
-        <table style="border-color: #CCCCCC; width: 100%; height: 100px; background-color: #eee7dd;" border="1">
+<%--        <table style="border-color: #CCCCCC; width: 100%; height: 100px; background-color: #eee7dd;" border="1">
             <tr>
                 <td width="20%">&nbsp;<b> Request ID </b> </td>
                 <td width="20%">&nbsp; <b>Request Date </b></td>
@@ -41,7 +41,17 @@
             </tr>
 
         </table>
+--%>
 
+
+    <%--eee7dd--%>
+    <asp:GridView ID="GridView1" class="table table-bordered table-condensed table-responsive table-hover" HeaderStyle-BackColor="#eee7dd" runat="server" BorderColor="White" ForeColor="Black">
+<%--        <asp:HyperLinkField Text="View/Edit" DataNavigateUrlFields="RequestNumber" DataNavigateUrlFormatString="AdminReqDetails.aspx?RequestNumber={0}"/>--%>
+        <Columns>
+            <asp:HyperLinkField DataNavigateUrlFields="RequestNumber" DataNavigateUrlFormatString="AdminReqDetails.aspx?RequestNumber={0}" HeaderText="Complete Request" Text="Complete" />
+        </Columns>
+<HeaderStyle BackColor="#EEE7DD"></HeaderStyle>
+    </asp:GridView>
 
 
     </div>

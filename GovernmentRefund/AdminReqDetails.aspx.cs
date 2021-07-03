@@ -11,11 +11,18 @@ namespace GovernmentRefund
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String RequestNumber = Request.QueryString["RequestNumber"];
+            requestIDD.Text = "Request Number: " + RequestNumber;
+            TextBox txt = null;
 
+            if (rejectbtn.Checked == true)
+            {
+                Reason.Enabled=(true);
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminReqDetails.aspx");
+
         }
         protected void Button2_Click(object sender, EventArgs e)
         {

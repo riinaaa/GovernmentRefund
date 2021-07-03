@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Adminm.Master" AutoEventWireup="true" CodeFile="AdminReqDetails.aspx.cs" Inherits="GovernmentRefund.AdminReqDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Adminm.Master" AutoEventWireup="true" CodeBehind="AdminReqDetails.aspx.cs" Inherits="GovernmentRefund.AdminReqDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <div class="page-title title-t">
@@ -8,6 +8,7 @@
             <td width="75%">
                 &nbsp;
                 <h1 style="text-align:left;"> Request Details </h1>
+                <asp:Label ID="requestIDD" runat="server"></asp:Label>
             </td>
             <td>
             </td>
@@ -65,18 +66,18 @@
         </td>
 
         <td width="60%">
+            <fieldset>
+            <asp:RadioButton ID="approvebtn" value="TRUE" runat="server" />
+            <asp:Label ID="Label1" runat="server" Text="Aprove"></asp:Label>
+            <asp:RadioButton ID="rejectbtn" runat="server" value="FALSE" />
+            <asp:Label ID="Label2" runat="server" Text="Reject"></asp:Label>
+            </fieldset>
+            Reason:
+            <asp:TextBox ID="Reason" class="input-field" runat="server" visibel=""></asp:TextBox>
 
-           <%-- <input type="radio" id="approve" name="Request_Approval" value="TRUE" onclick="ShowHideDiv()">
-            <label for="approve">Approve</label><br>
-            <input type="radio" id="reject" name="Request_Approval" value="FALSE" onclick="ShowHideDiv()">
-            <label for="reject">Reject</label><br>--%>
-            
-             <input type="radio" id="approve" name="Request_Approval" value="TRUE" onclick="ShowHideDiv()">
-             <asp:Label ID="Label1" runat="server" Text="Aprove"></asp:Label>
-             <input type="radio" id="reject" name="Request_Approval" value="FALSE" onclick="ShowHideDiv()">
-             <asp:Label ID="Label2" runat="server" Text="Reject"></asp:Label>
+            <%--         <input type="radio" id="reject" name="Request_Approval" value="FALSE" onclick="ShowHideDiv()">--%>
 
-            <script type="text/javascript">function ShowHideDiv() {
+<%--            <script type="text/javascript">function ShowHideDiv() {
                     var reject = document.getElementById("reject");
                     var dvReject = document.getElementById("dvReject");
                     dvReject.style.display = reject.checked ? "block" : "none";
@@ -85,7 +86,7 @@
             <div id="dvReject" style="display: none">
                 Reason:
                 <input type="text" id="txtReason" />
-            </div>
+            </div>--%>
         </td>
     </tr>
 
