@@ -88,7 +88,7 @@ namespace GovernmentRefund
         public string GetParsedTicket()
         {
             ticketFull = TktBlock();
-            ticketparsed = ticketFull.Substring(ticketFull.IndexOf(ticketNum), 13);
+            ticketparsed = ticketFull.Substring(ticketFull.IndexOf(ticketNum)-1, 14).Trim();
             ticketval = (ticketparsed.Length == 13) && ticketparsed.StartsWith("065"); //CHECK
 
             if (ticketval == true)
@@ -137,13 +137,12 @@ namespace GovernmentRefund
         public string GetCoupon()
         {
             ticketFull = TktBlock();
-            couponStatus = ticketFull.Substring(ticketFull.IndexOf("OK") + 10, 10).Trim();
+            couponStatus = ticketFull.Substring(ticketFull.LastIndexOf("OK") + 11, 10).Trim();
             if (couponStatus.Equals("A") || couponStatus.Equals("O"))
             {
                 couponValid = true; //CHECK
                 return couponStatus;
             }
-
             return "ERROR: COUPON INVALID";
         }
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paxm.Master" AutoEventWireup="true" CodeFile="PaxAddRequest.aspx.cs" Inherits="GovernmentRefund.PaxAddRequest" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paxm.Master" AutoEventWireup="true" CodeBehind="PaxAddRequest.aspx.cs" Inherits="GovernmentRefund.PaxAddRequest" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="text-center">
