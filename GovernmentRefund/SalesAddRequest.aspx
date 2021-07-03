@@ -17,8 +17,9 @@
         </td>
 
         <td width="20%">
-             <asp:FileUpload ID="FileUpload1" runat="server" />
-        </td>
+  <asp:FileUpload ID="FileUpload1" runat="server" Height="23px" Width="201px" />
+<asp:Button CssClass="my-button" ID="uploadbtn" runat="server" Text="Upload" Height="33px" Width="89px" OnClick="Button2_Click" />
+       <asp:Label ID="uploadStatus" runat="server" style="text-align: center;"></asp:Label>        </td>
     </tr>
 
     <tr>
