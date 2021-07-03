@@ -129,7 +129,7 @@ namespace GovernmentRefund
 
             if (dateValid == true)
             {
-                return myDate + "";
+                return myDate.ToString("yyyy-MM-dd");
             }
             return "ERROR: DATE IS INVALID";
         }
@@ -137,7 +137,7 @@ namespace GovernmentRefund
         public string GetCoupon()
         {
             ticketFull = TktBlock();
-            couponStatus = ticketFull.Substring(ticketFull.LastIndexOf("OK") + 11, 10).Trim();
+            couponStatus = ticketFull.Substring(ticketFull.IndexOf("OK") + 11, 9).Trim();
             if (couponStatus.Equals("A") || couponStatus.Equals("O"))
             {
                 couponValid = true; //CHECK
