@@ -33,7 +33,7 @@
                 <td width="20%">&nbsp; Khadijah </td>
                 <td width="20%">&nbsp; Processing</td>
                 <td>
-        <a href="PaxReqDetails.aspx" class="btn btn-primary btn-lg active" role="button">Complete</a>
+                  <asp:Button ID="Button1" runat="server" Height="47px" Text="Complete" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
                 </td>
 
 

@@ -1,63 +1,70 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paxm.Master" AutoEventWireup="true" CodeFile="PaxAddRequest.aspx.cs" Inherits="GovernmentRefund.PaxAddRequest" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="text-center">
-    <h1 class="display-4">New Request</h1>
+        <h1 class="display-4">New Request</h1>
+        <br />
+        <br />
+        <h3 style="text-align: left; color: #18216d; text-decoration: underline;">Request Info: </h3>
+        <br />
+        <table style="width: 53%; height: 255px;">
+            <tr>
+                <td width="20%">
+                    <h4 style="text-align: left;">Upload Letter: </h4>
+                    &nbsp;</td>
+                <td width="20%">
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <h4 style="text-align: left;">Number Of Tickets: </h4>
+                    &nbsp;</td>
+                <td width="20%">
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                        <asp:ListItem Value="" Text="Please Select" />
+                        <asp:ListItem Value="1" Text="1" />
+                        <asp:ListItem Value="2" Text="2" />
+                        <asp:ListItem Value="3" Text="3" />
+                        <asp:ListItem Value="4" Text="4" />
+                        <asp:ListItem Value="5" Text="5" />
+                        <asp:ListItem Value="6" Text="6" />
+                        <asp:ListItem Value="7" Text="7" />
+                        <asp:ListItem Value="8" Text="8" />
+                        <asp:ListItem Value="9" Text="9" />
+                    </asp:DropDownList>
 
-<table style="width: 60%; height: 100px;">
-    <tr>
-        <td width="20%">
-            <h3 style="text-align: left; color:#18216d; text-decoration: underline;"> Request Info </h3>
-        </td>
-    </tr>
+                    &nbsp;</td>
+            </tr>
 
-    <tr>
-        <td width="20%">
-            <h6 style="text-align:left;"> Upload Letter: </h6>
-        </td>
+            <tr>
+                <td>
+                    <h4 style="text-align: left;">Enter Tickets: </h4>
+                    &nbsp;
 
-        <td width="20%">
-            <input type="file" id="myFile" name="filename">
-        </td>
-    </tr>
+                </td>
+                <td width="40%">
 
-    <tr>
-        <td width="20%">
-            <h6 style="text-align:left;"> Number Of Tickets: </h6>
-        </td>
-
-        <td width="20%">
-            <select name="numDep" id="dropdown">
-                <option value="">Please Select</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>                
-                <option value="5">5</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            <h6 style="text-align:left;"> Enter Tickets: </h6>
-        </td>
-        <td id="textboxDiv"></td>
-    </tr>
-
-    <tr>
-        <td></td>
-        <td width="20%">
-        </td>
-    </tr>
-</table>
-
-        <a href="PaxDashboard.aspx" class="btn btn-primary btn-lg active" role="button">Add Request</a>
+                    <asp:Panel ID="pnlTextBoxes" runat="server">
+                    </asp:Panel>
+                    &nbsp;
 
 
-</div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <asp:Button ID="Button1" runat="server" Height="47px" Text="Add Request" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <asp:Label ID="labelStatus" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+        </table>
+
+    </div>
 </asp:Content>
