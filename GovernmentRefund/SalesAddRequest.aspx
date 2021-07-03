@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Salesm.Master" AutoEventWireup="true" CodeFile="SalesAddRequest.aspx.cs" Inherits="GovernmentRefund.SalesAddRequest" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Salesm.Master" AutoEventWireup="true" CodeBehind="SalesAddRequest.aspx.cs" Inherits="GovernmentRefund.SalesAddRequest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
         <div class="text-center">
@@ -17,7 +17,7 @@
         </td>
 
         <td width="20%">
-            <input type="file" id="myFile" name="filename">
+             <asp:FileUpload ID="FileUpload1" runat="server" />
         </td>
     </tr>
 
@@ -27,19 +27,21 @@
         </td>
 
         <td width="20%">
-            <select name="numDep" id="dropdown">
-                <option value="">Please Select</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>                
-                <option value="5">5</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
+             <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true">
+                        <asp:ListItem Value="" Text="Please Select" />
+                        <asp:ListItem Value="1" Text="1" />
+                        <asp:ListItem Value="2" Text="2" />
+                        <asp:ListItem Value="3" Text="3" />
+                        <asp:ListItem Value="4" Text="4" />
+                        <asp:ListItem Value="5" Text="5" />
+                        <asp:ListItem Value="6" Text="6" />
+                        <asp:ListItem Value="7" Text="7" />
+                        <asp:ListItem Value="8" Text="8" />
+                        <asp:ListItem Value="9" Text="9" />
+                    </asp:DropDownList>
+
+                    &nbsp;
+            
         </td>
     </tr>
 
@@ -47,19 +49,28 @@
         <td>
             <h6 style="text-align:left;"> Enter Tickets: </h6>
         </td>
-        <td id="textboxDiv"></td>
-    </tr>
+      <td width="40%">
 
-    <tr>
-        <td></td>
-        <td width="20%">
-        </td>
-    </tr>
-</table>
-
-        <a href="SalesDashboad.aspx" class="btn btn-primary btn-lg active" role="button">Add Request</a>
+                    <asp:Panel ID="pnlTextBoxes" runat="server">
+                    </asp:Panel>
+                    &nbsp;
 
 
-</div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <asp:Button ID="Button1" runat="server" Height="47px" Text="Add Request" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <asp:Label ID="labelStatus" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+        </table>
 
+    </div>
 </asp:Content>

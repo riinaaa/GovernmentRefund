@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paxm.Master" AutoEventWireup="true" CodeFile="PaxReqDetails.aspx.cs" Inherits="GovernmentRefund.PaxReqDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paxm.Master" AutoEventWireup="true" CodeBehind="PaxReqDetails.aspx.cs" Inherits="GovernmentRefund.PaxReqDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
@@ -35,7 +35,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="AccountNumber" name="AccountNumber" placeholder="IBAN" type="text" />
+            <asp:TextBox ID="AccountNumber" class="input-field" runat="server"  placeholder="IBAN"></asp:TextBox>
         </td>
     </tr>
 
@@ -45,7 +45,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="ReferenceNumber" name="ReferenceNumber" placeholder="Reference #" type="text" />
+            <asp:TextBox ID="ReferenceNumber" class="input-field" runat="server"  placeholder="Reference #"></asp:TextBox>
         </td>
     </tr>
 
@@ -56,7 +56,7 @@
         </td>
 
         <td width="20%">
-            <input class="input-field" id="TotalFare" name="TotalFare" placeholder="Total Fare for all tickets.." type="text" />
+             <asp:TextBox ID="TotalFare" class="input-field" runat="server"  placeholder="Total Fare for all tickets.."></asp:TextBox>
         </td>
     </tr>
 
@@ -67,9 +67,9 @@
 
         <td width="60%">
             <input type="radio" id="approve" name="Request_Approval" value="TRUE" onclick="ShowHideDiv()">
-            <label for="approve">Approve</label><br>
-            <input type="radio" id="reject" name="Request_Approval" value="FALSE" onclick="ShowHideDiv()">
-            <label for="reject">Reject</label><br>
+             <asp:Label ID="Label1" runat="server" Text="Aprove"></asp:Label>
+             <input type="radio" id="reject" name="Request_Approval" value="FALSE" onclick="ShowHideDiv()">
+             <asp:Label ID="Label2" runat="server" Text="Reject"></asp:Label>
 
             <script type="text/javascript">function ShowHideDiv() {
                     var reject = document.getElementById("reject");
@@ -97,7 +97,7 @@
     <tr>
         <td></td>
         <td width="20%">
-        <a href="PaxReqDetails.aspx" class="btn btn-primary btn-lg active" role="button">Update</a>
+           <asp:Button ID="Button1" runat="server" Text="Update" CssClass="my-button" OnClick="Button1_Click" />
         </td>
     </tr>
 
@@ -121,13 +121,13 @@
 <textarea id="TextTKT" name="TextTKT" cols="20" rows="17"> Ticket Here </textarea>
         </td> &nbsp; &nbsp;
         <td>
-          <a href="PaxTKT.aspx" class="btn btn-primary btn-lg active" role="button">Edit</a>
+          <asp:Button ID="Button2" runat="server" Text="Edit" CssClass="my-button" OnClick="Button2_Click" />
         </td>
     </tr>
 </table>
 
 
-<input align="left" class="my-button" id="Button3" type="button" value="View Letter" />
+    <asp:Button ID="Button3" runat="server" Text="View Letter" CssClass="my-button" OnClick="Button3_Click" />
 
 
 
