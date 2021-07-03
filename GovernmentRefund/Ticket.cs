@@ -88,7 +88,7 @@ namespace GovernmentRefund
         public string GetParsedTicket()
         {
             ticketFull = TktBlock();
-            ticketparsed = ticketFull.Substring(ticketFull.IndexOf(ticketNum)-1, 14).Trim();
+            ticketparsed = ticketFull.Substring(ticketFull.IndexOf(ticketNum), 13).Trim();
             ticketval = (ticketparsed.Length == 13) && ticketparsed.StartsWith("065"); //CHECK
 
             if (ticketval == true)
@@ -106,8 +106,10 @@ namespace GovernmentRefund
             if (fop == true)
             {
                 fopString = "GOV";
+                return fopString;
+
             }
-            return fopString;
+            return "ERROR: FORM OF PAYMENT IS INVALID"; ;
         }
 
         public string GetDOI()
