@@ -11,17 +11,17 @@
         <table align="center">
             <tr>
                 <td>
-    <input class="input-field" id="ID" name="ID" placeholder=" Enter your ID" type="text" />
+                    <asp:TextBox ID="ID" class="input-field" placeholder=" Enter your ID" runat="server"></asp:TextBox>
                     </td>
             </tr>
             <tr>
                 <td>
-    <input class="input-field" id="Password" name="Password" placeholder=" Enter your password " type="password" />
+                <asp:TextBox ID="Password" class="input-field" placeholder=" Enter your password" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
 
         </table>
-    <input class="my-button" id="Button1" type="button" value="Login" />
+        <asp:Button ID="Button1" class="my-button" runat="server" Text="Login" />
 
 </div>
 
