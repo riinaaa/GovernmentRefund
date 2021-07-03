@@ -37,6 +37,24 @@ namespace GovernmentRefund
         public string Ticketparsed { get => ticketparsed; set => ticketparsed = value; }
 
 
+
+        public Boolean TicketExists()
+        {
+            // to locate the ticket (in which file)
+            string[] MyFilesList = Directory.GetFiles(@"tickets\", "*.txt");
+            List<string> FoundedSearch = new List<string>();
+            foreach (string filename in MyFilesList)
+            {
+                string textFile = File.ReadAllText(filename);
+                if (textFile.Contains(ticketNum))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
         public string TktBlock()
         {
             // to locate the ticket (in which file)

@@ -14,77 +14,90 @@ namespace GovernmentRefund
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            int boxesNumber = Convert.ToInt32(DropDownList1.SelectedValue);
-
+            int boxesNumber;
+            TextBox txt = null;
+            Int32.TryParse(DropDownList1.SelectedValue, out boxesNumber);
             for (int i = 1; i <= boxesNumber; i++)
             {
-                TextBox txt = new TextBox();
+                txt = new TextBox();
                 String txtID = "ticket" + i;
                 txt.ID = txtID;
+                txt.Text = null;
                 txt.Attributes.Add("placeholder", "Enter Ticket: " + i);
-                txt.CssClass = ("inputttt-tickets");
+
                 //
                 RequiredFieldValidator rfv = new RequiredFieldValidator();
                 rfv.ErrorMessage = "    required field!";
                 rfv.ForeColor = System.Drawing.Color.Red;
                 rfv.ControlToValidate = txtID;
-                //
                 CustomValidator cvv = new CustomValidator();
-                cvv.ID = "cvvc"+i;
                 cvv.ServerValidate += new ServerValidateEventHandler(Cv_ServerValidate);
                 cvv.ErrorMessage = "   Ticket Invalid!";
                 cvv.ForeColor = System.Drawing.Color.Red;
                 cvv.ControlToValidate = txtID;
                 cvv.Display = ValidatorDisplay.Dynamic;
-                //
+
                 pnlTextBoxes.Controls.Add(txt);
                 pnlTextBoxes.Controls.Add(rfv);
                 pnlTextBoxes.Controls.Add(cvv);
-
-                // if all the tickets werent valid the label at the end will say so and if not the label will be red with invalid written
             }
         }
+
 
         private void Cv_ServerValidate(object source, ServerValidateEventArgs args)
         {
             String ticketInput = args.Value;
-                            Response.Write(ticketInput);
-
             Ticket ticc = new Ticket(ticketInput);
-            if (ticc.isValid() == true)
+            if (ticc.TicketExists())
             {
-                Response.Write(ticketInput);
-                args.IsValid = true;
-                labelStatus.Text = "tiii";
+                if (ticc.isValid() == true)
+                {
+                    args.IsValid = true;
+                }
+                else
+                {
+                    args.IsValid = false;
+                }
             }
             else
             {
-                args.IsValid = false;
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + ticketInput + " Doesnt exist!" + "');", true);
             }
+
         }
 
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //database add
-            if (IsPostBack)
+            int boxesNumber = Convert.ToInt32(DropDownList1.SelectedValue);
+            TextBox t = null;
+            for (int i = 1; i <= boxesNumber; i++)
             {
-                Page.Validate();
-                if (Page.IsValid)
-                {
-                    Response.Write("Page is valid");
-                    //back to dashboard
-                }
-                else
-                    Response.Write("Page is InValid");
-
-
+                String txtID = "ticket" + i.ToString();
+                t = (TextBox)pnlTextBoxes.FindControl(txtID);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + t.Text + "');", true);
             }
+
+
+
+            //database add
+            //if (IsPostBack)
+            //{
+            //    Page.Validate();
+            //    if (Page.IsValid)
+            //    {
+
+            //        Response.Write("Page is valid");
+            //  ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + "umm" + "');", true);
+            //    }
+            //}
+
+            //    else
+            //        Response.Write("Page is InValid");
+
+
         }
+
+
     }
 }

@@ -21,7 +21,7 @@
                     <h4 style="text-align: left;">Number Of Tickets: </h4>
                     &nbsp;</td>
                 <td width="20%">
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true">
                         <asp:ListItem Value="" Text="Please Select" />
                         <asp:ListItem Value="1" Text="1" />
                         <asp:ListItem Value="2" Text="2" />
