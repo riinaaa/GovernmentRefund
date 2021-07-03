@@ -20,20 +20,21 @@
 
         <table style="border-color: #CCCCCC; width: 100%; height: 100px; background-color: #eee7dd;" border="1">
             <tr>
-                <td width="20%">&nbsp; Request ID </td>
-                <td width="20%">&nbsp; Request Date</td>
-                <td width="20%">&nbsp; By</td>
-                <td width="20%">&nbsp; Status</td>
-                <td width="20%">&nbsp; Compelete Request</td>
+                <td width="20%">&nbsp;<b> Request ID </b> </td>
+                <td width="20%">&nbsp; <b>Request Date </b></td>
+                <td width="20%">&nbsp; <b> By </b></td>
+                <td width="20%">&nbsp; <b> Status </b></td>
+                <td width="20%">&nbsp;<b> Compelete Request</b></td>
 
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp; 101 </td>
-                <td width="20%">&nbsp; june 23th 2021</td>
-                <td width="20%">&nbsp; Khadijah </td>
-                <td width="20%">&nbsp; Processing</td>
+                <td id="RequestID" class="auto-style2">&nbsp; 101 </td>
+                <td id="RequestDate" width="20%">&nbsp; june 23th 2021</td>
+                <td id="CreatedBy" width="20%">&nbsp; Khadijah </td>
+                <td id="Action" width="20%">&nbsp; Processing</td>
+
                 <td>
-                  <asp:Button ID="Button1" runat="server" Height="47px" Text="Complete" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
+                  <asp:Button ID="EditButton" runat="server" Height="47px" Text="Complete" Width="128px" CssClass="my-button" OnClick="Button1_Click" />
                 </td>
 
 
