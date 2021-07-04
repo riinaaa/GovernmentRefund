@@ -52,8 +52,6 @@ namespace GovernmentRefund
                 pnlTextBoxes.Controls.Add(rfv);
                 pnlTextBoxes.Controls.Add(cvv);
             }
-
-
         }
 
 
@@ -61,18 +59,16 @@ namespace GovernmentRefund
         {
             String ticketInput = args.Value;
             Ticket ticc = new Ticket(ticketInput);
-            if (ticc.TicketExists() == true)
+            if (ticc.TicketExists())
             {
                 if (ticc.isValid() == true)
                 {
-
                     args.IsValid = true;
                 }
-                else if (ticc.isValid() == false)
+                else
                 {
                     args.IsValid = false;
                 }
-
             }
             else
             {
@@ -104,9 +100,11 @@ namespace GovernmentRefund
             DateTime RequestDate = DateTime.Now;
             String FilePath = "~/images/" + RequestNumber;
             int userId = 1808311;
+            String action = "In Progress";
+
 
             //insert request
-            cmd.CommandText = "insert into Request(RequestNumber, RequestDate, letter, CreatedBy) values('" + RequestNumber + "','" + RequestDate.ToString(format) + "','" + FilePath + "','" + userId + "')";
+            cmd.CommandText = "insert into Request(RequestNumber, RequestDate, letter, CreatedBy, Action, Reason) values('" + RequestNumber + "','" + RequestDate.ToString(format) + "','" + FilePath + "','" + userId + "','" + action + "','" + " " + "')";
             cmd.ExecuteNonQuery();
 
 
@@ -152,8 +150,6 @@ namespace GovernmentRefund
 	            [CreateDate] [date] NULL,
 	            [Action] [varchar](50) NULL,
              */
-
-            String action = "Not Completed";
 
             //insert flow
             cmd.CommandText = "insert into AuditTracking(RequestNumber, ModifiedBy, CreateDate, Action) values('" + RequestNumber + "','" + userId + "','" + RequestDate.ToString(format) + "','" + action + "')";

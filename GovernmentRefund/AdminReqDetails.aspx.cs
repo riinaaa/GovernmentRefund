@@ -72,7 +72,7 @@ namespace GovernmentRefund
             }
 
             //update 
-            cmd.CommandText = "update Request set RefernceNumber='"+ ReferenceNumber.Text + "' , AccountNumber='"+ AccountNumber.Text + "', TotalFare='"+ totalFare + "' where RequestNumber=" + RequestNumber + "";
+            cmd.CommandText = "update Request set RefernceNumber='"+ ReferenceNumber.Text + "' , AccountNumber='"+ AccountNumber.Text + "', TotalFare='" + totalFare + "', Action='" + Action + "', Reason='" + reasondb + "' where RequestNumber=" + RequestNumber + "";
             cmd.ExecuteNonQuery();
 
             //insert flow
