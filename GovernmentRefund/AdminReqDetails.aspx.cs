@@ -26,7 +26,6 @@ namespace GovernmentRefund
                 con.Close();
             }
             con.Open();
-
             displayData();
             //int RequestNumber = Convert.ToInt32(RequestNumberString);
             //String path = "";
@@ -34,14 +33,6 @@ namespace GovernmentRefund
             //path = (String)sql.ExecuteScalar();
             //Console.WriteLine(path);
             //Image1.ImageUrl = path;
-
-        }
-
-
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AdminTKT.aspx");
         }
 
         protected void rejectbtn_CheckedChanged(object sender, EventArgs e)
@@ -101,7 +92,6 @@ namespace GovernmentRefund
             String path = "~/images/" + RequestNumberString;
             Console.WriteLine("~/images/" + RequestNumberString);
             Image1.ImageUrl = path;
-
         }
 
         protected void displayData()
@@ -110,7 +100,7 @@ namespace GovernmentRefund
             int RequestNumber = Convert.ToInt32(RequestNumberString);
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select TicketNumber from TicketInfo where RequestNumber="+ RequestNumber;
+            cmd.CommandText = "select * from TicketInfo where RequestNumber="+ RequestNumber;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

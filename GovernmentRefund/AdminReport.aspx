@@ -35,10 +35,9 @@
 
     </div>   <br />
 
-    
         <asp:GridView ID="GridView1" class="table table-bordered table-condensed table-responsive table-hover" HeaderStyle-BackColor="#eee7dd" runat="server" BorderColor="White" ForeColor="Black">
-
         </asp:GridView>
+
 
     <h4>Total Requests: </h4>
     <asp:Button ID="Button2" runat="server" Height="47px" Text="Generate Report" Width="151px" CssClass="my-button" OnClick="Button2_Click" />
