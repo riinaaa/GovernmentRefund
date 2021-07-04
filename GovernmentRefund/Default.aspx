@@ -12,16 +12,21 @@
             <tr>
                 <td>
                     <asp:TextBox ID="ID" class="input-field" placeholder=" Enter your ID" runat="server"></asp:TextBox>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"   
+                 ControlToValidate="ID" ErrorMessage="Please Enter Your ID"  ForeColor="Red"></asp:RequiredFieldValidator>    
+
                     </td>
             </tr>
             <tr>
                 <td>
                 <asp:TextBox ID="Password" class="input-field" placeholder=" Enter your password" runat="server" TextMode="Password"></asp:TextBox>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"   
+                 ControlToValidate="Password" ErrorMessage="Please Enter Your Password"  ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
 
         </table>
-        <asp:Button ID="Button1" class="my-button" runat="server" Text="Login" />
+        <asp:Button ID="Button1" class="my-button" runat="server" Text="Login" OnClick="Button1_Click" />
 
 </div>
 
