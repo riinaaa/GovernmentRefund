@@ -38,13 +38,6 @@ namespace GovernmentRefund
             da.Fill(dt);
             GridView1.DataSource = dt;
             GridView1.DataBind();
-            /*dt.Columns.Add(HyperLinkField)*/;
-
-
-            //SELECT o.orderid, o.amount, i.description
-            //FROM orders o
-            //INNER JOIN items i
-            //ON o.itemid = i.itemid
         }
     }
 }

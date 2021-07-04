@@ -15,7 +15,6 @@
                     </td>
                 </tr>
             </table>
-
         </div>
 
 <%--        <table style="border-color: #CCCCCC; width: 100%; height: 100px; background-color: #eee7dd;" border="1">
@@ -52,7 +51,5 @@
         </Columns>
 <HeaderStyle BackColor="#EEE7DD"></HeaderStyle>
     </asp:GridView>
-
-
     </div>
 </asp:Content>
