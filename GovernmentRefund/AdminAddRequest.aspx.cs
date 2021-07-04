@@ -16,6 +16,7 @@ namespace GovernmentRefund
         SqlConnection con = new SqlConnection(@"Data Source=RINA-RAZER\SQLEXPRESS;Initial Catalog=GR;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
+            Validate();
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
@@ -51,6 +52,8 @@ namespace GovernmentRefund
                 pnlTextBoxes.Controls.Add(rfv);
                 pnlTextBoxes.Controls.Add(cvv);
             }
+
+
         }
 
 
@@ -58,17 +61,18 @@ namespace GovernmentRefund
         {
             String ticketInput = args.Value;
             Ticket ticc = new Ticket(ticketInput);
-
-            if (ticc.TicketExists())
+            if (ticc.TicketExists() == true)
             {
                 if (ticc.isValid() == true)
                 {
+
                     args.IsValid = true;
                 }
-                else
+                else if (ticc.isValid() == false)
                 {
                     args.IsValid = false;
                 }
+
             }
             else
             {
@@ -80,6 +84,7 @@ namespace GovernmentRefund
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Validate();
             string format = "yyyy-MM-dd HH:mm:ss";
             int boxesNumber = Convert.ToInt32(DropDownList1.SelectedValue);
             TextBox t = null;
@@ -177,3 +182,4 @@ namespace GovernmentRefund
         }
     }
 }
+
