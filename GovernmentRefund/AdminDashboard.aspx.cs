@@ -31,7 +31,7 @@ namespace GovernmentRefund
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText= "select r.RequestNumber, r.RequestDate, r.CreatedBy, a.Action from Request r INNER JOIN AuditTracking a ON r.RequestNumber = a.RequestNumber";
+            cmd.CommandText= "select RequestNumber, RequestDate, CreatedBy, Action from Request";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

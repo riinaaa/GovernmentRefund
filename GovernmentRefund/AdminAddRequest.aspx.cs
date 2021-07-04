@@ -16,6 +16,7 @@ namespace GovernmentRefund
         SqlConnection con = new SqlConnection(@"Data Source=RINA-RAZER\SQLEXPRESS;Initial Catalog=GR;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
+            Validate();
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
@@ -58,7 +59,6 @@ namespace GovernmentRefund
         {
             String ticketInput = args.Value;
             Ticket ticc = new Ticket(ticketInput);
-
             if (ticc.TicketExists())
             {
                 if (ticc.isValid() == true)
@@ -80,6 +80,7 @@ namespace GovernmentRefund
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Validate();
             string format = "yyyy-MM-dd HH:mm:ss";
             int boxesNumber = Convert.ToInt32(DropDownList1.SelectedValue);
             TextBox t = null;
@@ -99,9 +100,11 @@ namespace GovernmentRefund
             DateTime RequestDate = DateTime.Now;
             String FilePath = "~/images/" + RequestNumber;
             int userId = 1808311;
+            String action = "In Progress";
+
 
             //insert request
-            cmd.CommandText = "insert into Request(RequestNumber, RequestDate, letter, CreatedBy) values('" + RequestNumber + "','" + RequestDate.ToString(format) + "','" + FilePath + "','" + userId + "')";
+            cmd.CommandText = "insert into Request(RequestNumber, RequestDate, letter, CreatedBy, Action, Reason) values('" + RequestNumber + "','" + RequestDate.ToString(format) + "','" + FilePath + "','" + userId + "','" + action + "','" + " " + "')";
             cmd.ExecuteNonQuery();
 
 
@@ -148,8 +151,6 @@ namespace GovernmentRefund
 	            [Action] [varchar](50) NULL,
              */
 
-            String action = "Not Completed";
-
             //insert flow
             cmd.CommandText = "insert into AuditTracking(RequestNumber, ModifiedBy, CreateDate, Action) values('" + RequestNumber + "','" + userId + "','" + RequestDate.ToString(format) + "','" + action + "')";
             cmd.ExecuteNonQuery();
@@ -177,3 +178,4 @@ namespace GovernmentRefund
         }
     }
 }
+
