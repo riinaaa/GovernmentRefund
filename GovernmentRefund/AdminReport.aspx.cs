@@ -22,14 +22,34 @@ namespace GovernmentRefund
                 con.Close();
             }
             con.Open();
-            displayData();
-            displayData();
+            String status = DropDownList1.SelectedValue;
+
+            if (status.Equals("All"))
+            {
+                displayData();
+            }
+            else if (status.Equals("Approved"))
+            {
+                displayData(status);
+            }
+            else if (status.Equals("Rejected"))
+            {
+                displayData(status);
+            }
+
+            else if (status.Equals("In Progress"))
+            {
+                displayData(status);
+            }
+
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminReport.aspx");
-
+            String from = TxtDob.Text;
+            String to = TxtDob2.Text;
+            displayData(from, to);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -42,11 +62,38 @@ namespace GovernmentRefund
             //Control 'GridView1' of type 'GridView' must be placed inside a form tag with runat=server."  
         }
         protected void displayData()
-        {
-            
+        { 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select RequestNumber, RequestDate, CreatedBy, TotalFare, RefernceNumber, AccountNumber, Action from Request";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
+
+        protected void displayData(String status)
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select RequestNumber, RequestDate, CreatedBy, TotalFare, RefernceNumber, AccountNumber, Action from Request where Action = '" + status + "'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
+
+        protected void displayData(String from, String to)
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select RequestNumber, RequestDate, CreatedBy, TotalFare, RefernceNumber, AccountNumber, Action from Request where RequestDate BETWEEN '" + from + "'AND '" + to + "'";
+
+
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -76,7 +123,6 @@ namespace GovernmentRefund
             Response.End();
 
         }
-
 
     }
 }
