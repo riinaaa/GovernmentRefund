@@ -15,24 +15,32 @@ namespace GovernmentRefund
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Image1.Style["display"] = "none";
-
-            Image1.ImageUrl="";
-            String RequestNumberString = Request.QueryString["RequestNumber"];
-            requestIDD.Text = "Request Number: " + RequestNumberString;
+            String RequestNumber = Request.QueryString["RequestNumber"];
+            String RequestNumberr = Request.QueryString["RequestNumberr"];
+            String letterPath = "~/images/" + RequestNumber+".PNG";
+            labelReq.Text = "Request Number: " + RequestNumber;
+            Image1.ImageUrl = letterPath;
+            Image1.Visible = false;
+            requestIDD.Text =RequestNumber;
+            requestIDD.Visible = false;
             TextBox txt = null;
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
             con.Open();
-            displayData();
-            //int RequestNumber = Convert.ToInt32(RequestNumberString);
-            //String path = "";
-            //SqlCommand sql = new SqlCommand("SELECT letter FROM Request where RequestNumber=" + RequestNumber, con);
-            //path = (String)sql.ExecuteScalar();
-            //Console.WriteLine(path);
-            //Image1.ImageUrl = path;
+
+            int RequestNumberInt;
+            Int32.TryParse(RequestNumber, out RequestNumberInt);
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from TicketInfo where RequestNumber=" + RequestNumberInt;
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
         }
 
         protected void rejectbtn_CheckedChanged(object sender, EventArgs e)
@@ -52,8 +60,8 @@ namespace GovernmentRefund
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            String RequestNumberString = Request.QueryString["RequestNumber"];
-            int RequestNumber = Convert.ToInt32(RequestNumberString);
+            String RequestNumberString = requestIDD.Text;
+            int RequestNumberDF = Convert.ToInt32(RequestNumberString);
             double totalFare = Convert.ToDouble(TotalFare.Text);
             String Action = "";
             DateTime RequestDate = DateTime.Now;
@@ -72,42 +80,20 @@ namespace GovernmentRefund
             }
 
             //update 
-            cmd.CommandText = "update Request set RefernceNumber='"+ ReferenceNumber.Text + "' , AccountNumber='"+ AccountNumber.Text + "', TotalFare='" + totalFare + "', Action='" + Action + "', Reason='" + reasondb + "' where RequestNumber=" + RequestNumber + "";
+            cmd.CommandText = "update Request set RefernceNumber='" + ReferenceNumber.Text + "' , AccountNumber='" + AccountNumber.Text + "', TotalFare='" + totalFare + "', Action='" + Action + "', Reason='" + reasondb + "' where RequestNumber=" + RequestNumberDF + "";
             cmd.ExecuteNonQuery();
 
             //insert flow
-            cmd.CommandText = "insert into AuditTracking(RequestNumber, ModifiedBy, CreateDate, Action, Reason) values('" + RequestNumber + "','" + userId + "','" + RequestDate.ToString(format) + "','" + Action + "','" + reasondb + "')";
+            cmd.CommandText = "insert into AuditTracking(RequestNumber, ModifiedBy, CreateDate, Action, Reason) values('" + RequestNumberDF + "','" + userId + "','" + RequestDate.ToString(format) + "','" + Action + "','" + reasondb + "')";
             cmd.ExecuteNonQuery();
 
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + RequestNumber + " Updated!" + "');", true);
-
-
-
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + RequestNumberDF + " Updated!" + "');", true);
 
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            String RequestNumberString = Request.QueryString["RequestNumber"];
-            String path = "~/images/" + RequestNumberString;
-            Console.WriteLine("~/images/" + RequestNumberString);
-            Image1.ImageUrl = path;
+            Image1.Visible = true;
         }
-
-        protected void displayData()
-        {
-            String RequestNumberString = Request.QueryString["RequestNumber"];
-            int RequestNumber = Convert.ToInt32(RequestNumberString);
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from TicketInfo where RequestNumber="+ RequestNumber;
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
-        }
-
     }
 }

@@ -16,7 +16,7 @@ namespace GovernmentRefund
         protected void Page_Load(object sender, EventArgs e)
         {
             String TicketNumber = Request.QueryString["TicketNumber"];
-            tktnumberLabel.Text = "Ticket #: " + TicketNumber +" .";
+            tktnumberLabel.Text = "Ticket #: " + TicketNumber + " .";
             Ticket test = new Ticket(TicketNumber);
             fullTKT.Text = test.TktBlock();
 
