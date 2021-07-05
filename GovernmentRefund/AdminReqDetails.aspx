@@ -8,11 +8,15 @@
             <tr>
                 <td width="75%">&nbsp;
                 <h1 style="text-align: left;">Request Details </h1>
+                     <asp:Label ID="labelReq" runat="server"></asp:Label>
                     <asp:Label ID="requestIDD" runat="server"></asp:Label>
                 </td>
                 <td></td>
             </tr>
         </table>
+
+<%--                     <asp:Image ID="Image1" runat="server" Height="188px" style="margin-bottom: 94px" Width="379px" />--%>
+
 
 
     </div>
@@ -44,6 +48,8 @@
             <td width="20%">
                 <asp:TextBox ID="ReferenceNumber" class="input-field" runat="server" placeholder="Reference #"></asp:TextBox>
             </td>
+
+
         </tr>
 
 
@@ -88,21 +94,12 @@
             <td></td>
             <td width="20%">
                 <asp:Button ID="requestUpdatebtn" runat="server" Text="Update" CssClass="my-button" OnClick="Button1_Click" />
+                    <asp:Button ID="Button1" runat="server" Text="View Letter" CssClass="my-button" OnClick="Button3_Click" />
+
             </td>
+
         </tr>
 
-        <tr>
-            <td>
-                <h1>&nbsp;
-                
-    <asp:Button ID="Button3" runat="server" Text="View Letter" CssClass="my-button" OnClick="Button3_Click" />
-                    <asp:Image ID="Image1" runat="server" Height="188px" style="margin-bottom: 94px" Width="379px" />
-                    <script>
-                        Button1.OnClientClick ="document.getElementById('" + Image1.ClientID + "').style.display = 'block'";
-                    </script>
-                </h1>
-            </td>
-        </tr>
     </table>
     <hr />
 
@@ -111,9 +108,10 @@
     <h3 align="center" style="color: #18216d; text-decoration: underline;">Tickets: </h3>
 
     <asp:GridView ID="GridView1" runat="server" class="table table-bordered table-condensed table-responsive table-hover" HeaderStyle-BackColor="#eee7dd" BorderColor="White" ForeColor="Black">
-                <Columns>
+             <Columns>
             <asp:HyperLinkField DataNavigateUrlFields="TicketNumber" DataNavigateUrlFormatString="AdminTKT.aspx?TicketNumber={0}" HeaderText="Complete Ticket" Text="Edit" />
         </Columns>
+
     </asp:GridView>
 
 
