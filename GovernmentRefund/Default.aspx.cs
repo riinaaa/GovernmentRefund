@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Security;
+using System.Configuration;
 
 
 namespace GovernmentRefund
@@ -23,6 +25,8 @@ namespace GovernmentRefund
             SqlCommand cmd = new SqlCommand("select * from Users where ID=@UserID and Password=@Password", con);
             cmd.Parameters.AddWithValue("@ID", ID.Text);
             cmd.Parameters.AddWithValue("Password", Password.Text);
+          ///  cmd.Parameters.AddWithValue("Role", Role);       Should I declare the role here??
+
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -32,7 +36,16 @@ namespace GovernmentRefund
 
             if (dt.Rows.Count > 0)
             {
-                Response.Redirect("AdminDashboard.aspx");
+
+                //foreach (DataRow row in dt.Rows)
+                //{
+                //    if (row["UserName"].ToString() == this.ID.Text && row["Password"].ToString() == this.Password.Text)
+                //    {
+                //    if *** Htow to check the role here?? ***
+                //    }
+                //}
+
+                        Response.Redirect("AdminDashboard.aspx");
             }
             else
             {

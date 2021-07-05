@@ -18,7 +18,7 @@ namespace GovernmentRefund
             {
                 con.Close();
             }
-            con.Open();
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
