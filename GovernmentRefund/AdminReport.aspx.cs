@@ -110,7 +110,7 @@ namespace GovernmentRefund
             Response.ClearContent();
             Response.ClearHeaders();
             Response.Charset = "";
-            string FileName = "Vithal" + DateTime.Now + ".xls";
+            string FileName = "GR_REPORT_" + DateTime.Now + ".xls";
             StringWriter strwritter = new StringWriter();
             HtmlTextWriter htmltextwrtter = new HtmlTextWriter(strwritter);
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
