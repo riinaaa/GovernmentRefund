@@ -15,7 +15,7 @@
             </tr>
         </table>
 
-<%--                     <asp:Image ID="Image1" runat="server" Height="188px" style="margin-bottom: 94px" Width="379px" />--%>
+                     <asp:Image ID="Image1" runat="server" Height="188px" style="margin-bottom: 94px" Width="379px" />
 
 
 

@@ -17,9 +17,10 @@ namespace GovernmentRefund
         {
             String RequestNumber = Request.QueryString["RequestNumber"];
             String RequestNumberr = Request.QueryString["RequestNumberr"];
-            String letterPath = "~/images/" + RequestNumber;
+            String letterPath = "~/images/" + RequestNumber+".PNG";
             labelReq.Text = "Request Number: " + RequestNumber;
-            //Image1.ImageUrl = letterPath;
+            Image1.ImageUrl = letterPath;
+            Image1.Visible = false;
             requestIDD.Text =RequestNumber;
             requestIDD.Visible = false;
             TextBox txt = null;
@@ -92,7 +93,7 @@ namespace GovernmentRefund
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            
+            Image1.Visible = true;
         }
     }
 }
