@@ -108,7 +108,7 @@
 
     <asp:GridView ID="GridView1" runat="server" class="table table-bordered table-condensed table-responsive table-hover" HeaderStyle-BackColor="#eee7dd" BorderColor="White" ForeColor="Black">
              <Columns>
-            <asp:HyperLinkField DataNavigateUrlFields="TicketNumber" DataNavigateUrlFormatString="AdminTKT.aspx?TicketNumber={0}" HeaderText="Complete Ticket" Text="Edit" />
+            <asp:HyperLinkField DataNavigateUrlFields="TicketNumber" DataNavigateUrlFormatString="PaxTKT.aspx?TicketNumber={0}" HeaderText="Complete Ticket" Text="Edit" />
         </Columns>
 
     </asp:GridView>

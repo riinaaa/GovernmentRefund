@@ -68,7 +68,7 @@ namespace GovernmentRefund
             string format = "yyyy-MM-dd HH:mm:ss";
             String reasondb = Reasontxt.Text + " ";
 
-            int userId = 1808311;
+            int userId = Convert.ToInt32(Session["userID"]);
 
             if (approvebtn.Checked)
             {

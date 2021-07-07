@@ -14,6 +14,7 @@ namespace GovernmentRefund
         SqlConnection con = new SqlConnection(@"Data Source=RINA-RAZER\SQLEXPRESS;Initial Catalog=GR;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
+            int userID = Convert.ToInt32(Session["userID"]);
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
@@ -29,9 +30,10 @@ namespace GovernmentRefund
 
         protected void displayData()
         {
+            int userID = Convert.ToInt32(Session["userID"]);
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select RequestNumber, RequestDate, CreatedBy, Action from Request";
+            cmd.CommandText = "select RequestNumber, RequestDate, CreatedBy, Action from Request where createdBy= " + userID;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

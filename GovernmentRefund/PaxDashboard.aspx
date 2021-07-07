@@ -21,7 +21,7 @@
        <asp:GridView ID="GridView1" class="table table-bordered table-condensed table-responsive table-hover" HeaderStyle-BackColor="#eee7dd" runat="server" BorderColor="White" ForeColor="Black">
 <%--        <asp:HyperLinkField Text="View/Edit" DataNavigateUrlFields="RequestNumber" DataNavigateUrlFormatString="AdminReqDetails.aspx?RequestNumber={0}"/>--%>
         <Columns>
-            <asp:HyperLinkField DataNavigateUrlFields="RequestNumber" DataNavigateUrlFormatString="AdminReqDetails.aspx?RequestNumber={0}" HeaderText="Complete Request" Text="Complete" />
+            <asp:HyperLinkField DataNavigateUrlFields="RequestNumber" DataNavigateUrlFormatString="PaxReqDetails.aspx?RequestNumber={0}" HeaderText="Complete Request" Text="Complete" />
         </Columns>
 <HeaderStyle BackColor="#EEE7DD"></HeaderStyle>
     </asp:GridView>

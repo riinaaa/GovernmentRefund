@@ -11,7 +11,7 @@ namespace GovernmentRefund
 {
     public partial class SalesAddRequest : System.Web.UI.Page
     {
-        int RequestNumber = new Random().Next(1000, 9999);
+        static int RequestNumber = new Random().Next(1000, 9999);
         SqlConnection con = new SqlConnection(@"Data Source=RINA-RAZER\SQLEXPRESS;Initial Catalog=GR;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -93,7 +93,7 @@ namespace GovernmentRefund
                 DateTime RequestDate = DateTime.Now;
                 Console.WriteLine(RequestDate.ToString());
                 String FilePath = "~/images/" + RequestNumber;
-                int userId = 1808311;
+                int userId = Convert.ToInt32(Session["userID"]);
                 String action = "In Progress";
 
 
@@ -122,7 +122,7 @@ namespace GovernmentRefund
                 cmd.CommandText = "insert into AuditTracking(RequestNumber, ModifiedBy, CreateDate, Action) values('" + RequestNumber + "','" + userId + "','" + RequestDate.ToString(format) + "','" + action + "')";
                 cmd.ExecuteNonQuery();
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "alert('" + RequestNumber + " Was Added Succefully!" + "');", true);
-                Response.Redirect("AdminDashboard.aspx");
+                Response.Redirect("SalesDashboad.aspx");
 
             }
         }

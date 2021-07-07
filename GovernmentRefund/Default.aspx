@@ -34,11 +34,4 @@
 
 </div>
 
-<div class="text-center ">
-    <a href="AdminDashboard">Admin |</a>
-    <a href="SalesDashboad">Sales Office | </a>
-    <a href="PaxDashboard">Pax | </a>
-    <a href="CollectionDashboard">Collection Team</a>
-</div>
-
 </asp:Content>

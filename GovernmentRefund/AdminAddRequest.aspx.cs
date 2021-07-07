@@ -94,7 +94,7 @@ namespace GovernmentRefund
                 DateTime RequestDate = DateTime.Now;
                 Console.WriteLine(RequestDate.ToString());
                 String FilePath = "~/images/" + RequestNumber;
-                int userId = 1808311;
+                int userId = Convert.ToInt32(Session["userID"]);
                 String action = "In Progress";
 
 

@@ -54,6 +54,8 @@
                         <li><a runat="server" href="~/PaxAddRequest">New Request</a></li>
                         <li><a runat="server" href="~/PaxReport">Reports</a></li>
                         <li><a runat="server" href="~/Default">Logout</a></li>
+                         <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        <li><a  runat="server"> <%: "Hi!, " + Session["name"]%>  </a></li>
                     </ul>
                 </div>
             </div>
