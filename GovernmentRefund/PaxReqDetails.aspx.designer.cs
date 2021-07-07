@@ -15,6 +15,33 @@ namespace GovernmentRefund
     {
 
         /// <summary>
+        /// labelReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelReq;
+
+        /// <summary>
+        /// requestIDD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label requestIDD;
+
+        /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
         /// AccountNumber control.
         /// </summary>
         /// <remarks>
@@ -42,6 +69,15 @@ namespace GovernmentRefund
         protected global::System.Web.UI.WebControls.TextBox TotalFare;
 
         /// <summary>
+        /// approvebtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton approvebtn;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -49,6 +85,15 @@ namespace GovernmentRefund
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// rejectbtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rejectbtn;
 
         /// <summary>
         /// Label2 control.
@@ -60,6 +105,33 @@ namespace GovernmentRefund
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
+        /// reasonlabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label reasonlabel;
+
+        /// <summary>
+        /// Reasontxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Reasontxt;
+
+        /// <summary>
+        /// requestUpdatebtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button requestUpdatebtn;
+
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -69,21 +141,12 @@ namespace GovernmentRefund
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Button2 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-
-        /// <summary>
-        /// Button3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }
