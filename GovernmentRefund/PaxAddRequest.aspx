@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Paxm.Master" AutoEventWireup="true" CodeBehind="PaxAddRequest.aspx.cs" Inherits="GovernmentRefund.PaxAddRequest" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="text-center">
         <h1 class="display-4">New Request</h1>
@@ -13,16 +12,18 @@
                     <h4 style="text-align: left;">Upload Letter: </h4>
                     &nbsp;</td>
                 <td width="20%">
-  <asp:FileUpload ID="FileUpload1" runat="server" Height="23px" Width="201px" />
+                    <asp:FileUpload ID="FileUpload1" runat="server" Height="23px" Width="201px" />
 <asp:Button CssClass="my-button" ID="uploadbtn" runat="server" Text="Upload" Height="33px" Width="89px" OnClick="Button2_Click" />
-     <asp:Label ID="uploadStatus" runat="server" style="text-align: center;"></asp:Label>                </td>
+                                         <asp:Label ID="uploadStatus" runat="server" style="text-align: center;"></asp:Label>
+                </td>
+
             </tr>
             <tr>
                 <td width="20%">
                     <h4 style="text-align: left;">Number Of Tickets: </h4>
                     &nbsp;</td>
                 <td width="20%">
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true">
                         <asp:ListItem Value="" Text="Please Select" />
                         <asp:ListItem Value="1" Text="1" />
                         <asp:ListItem Value="2" Text="2" />
@@ -62,10 +63,10 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Label ID="labelStatus" runat="server" Text="Label"></asp:Label>
                 </td>
             </tr>
         </table>
 
     </div>
 </asp:Content>
+
