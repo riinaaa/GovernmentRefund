@@ -39,7 +39,6 @@
         </asp:GridView>
 
 
-    <h4>Total Requests: </h4>
     <asp:Button ID="Button2" runat="server" Height="47px" Text="Generate Report" Width="151px" CssClass="my-button" OnClick="Button2_Click" />
 
 
